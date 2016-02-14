@@ -1,0 +1,37 @@
+Problem Setter and Editorialist : Abdul Qadir Faridi[1]
+
+The problem is to find out the number of triplets (i,j,k) such that A[i] < A[k] < A[j]
+
+Given an array A[], lets try to find out small[] from it.
+
+small[i] = no. of A[x] which are less than or equal to A[i] for 0 <= x <= i
+
+greater[i] = no. of A[x] which are greater than or equal to A[i] for x <= i <= n-1
+
+To construct small[], we can use a BIT. Traverse the array from left to right and for every i, check no of numbers that have occured so far which are less than or equal to A[i].This would be equal to small[i] i.e.
+
+		for(int i=0;i<n;i++){
+			small[i] = b.query(A[i]); // No of numbers <= A[i]
+			b.update(A[i],1);         // add 1 at A[i]
+		}
+
+
+Now, To construct greater[], we can use another BIT. Traverse the array from right to left and for every i, check no of numbers that have occured so far which are greater than or equal to A[i].This would be equal to greater[i] i.e.
+	
+		for(int i=n-1,k=0 ; i>=0 ; i--,k++){
+			greater[i] = k - b2.query(A[i]); // No of numbers >= A[i]
+			b2.update(A[i],1);         // add 1 at A[i]
+		}
+
+Now, to get the number of triplets (i,j,k) such that A[i] < A[k] < A[j].Traverse the array from right to left and for every i, add number of triplets (i,j,k) such that A[i] < A[j] < A[k] and A[i] < A[k] < A[j] equal to Combination(greater,2) and subtract number of triplets (i,j,k) such that A[i] < A[j] < A[k]  equal to greater[i]*small[i].
+Read the code snippet below for better understanding :-
+
+		int ans = 0;
+		for(int i=n-1;i>=0;i--){
+			ans = (ans + (greater[i]*(greater[i]-1))/2)%MOD; // number of triplets (i,j,k) such that A[i] < A[j] < A[k] and A[i] < A[k] < A[j]
+			ans = (ans - greater[i]*small[i] + MOD)%MOD; // subtract number of triplets (i,j,k) such that A[i] < A[j] < A[k]
+		}
+
+As answer would be large,take MOD at each step.
+
+Time Complexity : For test case O(N*log(N)) since query and update operation of BIT takes O(log(N)). So overall Time Complexity will be O(T*N*log(N))

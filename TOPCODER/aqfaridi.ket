@@ -1,0 +1,29 @@
+#include <iostream>
+#include <algorithm>
+#include <cstring>
+#include <vector>
+#include <iomanip>
+#include <cmath>
+#include <map>
+#include <climits>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+typedef long long LL;
+
+#define trace1(x)                cerr << #x << ": " << x << endl;
+#define trace2(x, y)             cerr << #x << ": " << x << " | " << #y << ": " << y << endl;
+#define trace3(x, y, z)          cerr << #x << ": " << x << " | " << #y << ": " << y << " | " << #z << ": " << z << endl;
+
+class <%:class-name%> {
+public:
+	<%:return-type%> <%:method-name%>(<%:param-type-list%>);
+};
+
+<%:return-type%> <%:class-name%>::<%:method-name%>(<%:param-list%>) {
+	<%:set-caret%>
+}
+
+<%:testing-code%>

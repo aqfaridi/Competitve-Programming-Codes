@@ -1,0 +1,183 @@
+1.
+
+Which of the code snippet is correct for retrieving IMEI number of the android device ?
+Max. Marks 1.0
+
+ **   TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE); String imei = mTelephonyMgr.getDeviceId();
+    TelephonyManager mTelephonyMgr = (TelephonyManager) String imei = mTelephonyMgr.getDeviceId();
+    TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemContext(Context.TELEPHONY_SERVICE); String imei = mTelephonyMgr.getDeviceId();
+    getSystemService(Context.TELEPHONY_SERVICE); String imei = mTelephonyMgr.getDeviceId();
+
+
+2.
+
+Which of the code snippet is correct for calling a subactivity in android?
+Max. Marks 1.0
+
+    Intent intent = new Intent(this, SubActivity.class); addintent.putExtra(name, value); startActivityForResult(intent, int);
+ **  Intent intent = new Intent(this, SubActivity.class); addintent.putExtra(name, value); startActivity(intent, int);
+    Intent intent = new Intent(this, SubActivity.class); startActivityForResult(intent, int);
+    None
+
+3.
+
+Which of these exceptions is thrown when an integrity constraint gets violated in android ?
+Max. Marks 1.0
+
+    SQLiteBlobTooBigException
+    SQLiteCantOpenDatabaseException
+ **   SQLiteConstraintException
+    None
+
+4.
+
+What is the result of the following piece of code:
+
+class Person { public int number; }
+
+public class Test{
+public void doIt(int i , Person p){
+i = 5;
+p.number = 8;
+}
+
+public static void main(String args[]){
+int x = 0;
+Person p = new Person();
+new Test().doIt(x, p);
+System.out.println(x + " " + p.number);
+
+}
+}
+
+Max. Marks 1.0
+
+ **   0 8
+    5 0
+    0 0
+    5 8
+
+	5.
+
+What will be the output of the program?
+
+class PassA 
+{
+public static void main(String [] args) 
+{
+PassA p = new PassA();
+p.start();
+}
+void start() 
+{
+ long [] a1 = {3,4,5};
+ long [] a2 = fix(a1);
+ System.out.print(a1[0] + a1[1] + a1[2] + " ");
+  System.out.println(a2[0] + a2[1] + a2[2]);
+   }
+   long [] fix(long [] a3) 
+    {
+   a3[1] = 7;
+   return a3;
+    }
+}
+
+Max. Marks 1.0
+
+    12 15
+ **   15 15
+    3 4 5 3 7 5
+    3 7 5 3 7 5
+
+
+	
+6.
+
+What will happen if a class is not having any name?
+Max. Marks 1.0
+
+    It cannot have a destructor.
+    It cannot have a constructor.
+    It is not allowed.
+ **   Both A and B.
+
+ 
+ 7.
+
+Which is true about a method-local inner class?
+Max. Marks 1.0
+
+    It must be marked final
+ **   It can be marked abstract
+    It can be marked public.
+    It can be marked static
+
+
+8.
+
+You need to store elements in a collection that guarantees that no duplicates are stored and all elements can be accessed in natural order. Which interface provides that capability?
+Max. Marks 1.0
+
+    Array
+  **  Set
+    List
+    Queue
+
+9.
+
+Consider the following C# program:
+
+using System;
+class Program
+{
+static void Main()
+{
+int n;
+n = 4;
+fun(n, 0, 1);
+Console.Read();
+}
+static void fun(int n, int a, int b)
+{
+if (n <= 0)
+return;
+Console.Write("{0} ", a);
+ fun(--n, b, 1 + a + b);
+}
+}
+
+Which one of the following is the the output of the above program?
+Max. Marks 1.0
+
+    0 1 2 3
+ **   0 1 2 4
+    0 1 2 1
+    0 1 2 5
+
+
+	10.
+
+Consider the following code snippet:
+
+count = 0
+while count < 5 do
+puts count
+count += 1
+end
+for i in 0..4 do
+puts i
+end
+y = 4
+until y < 0 do
+puts y
+y -= 1
+ end
+
+What is the output of the above code?
+Max. Marks 1.0
+
+ **  012340123443210
+    Compilation error
+    012340123401234
+    012344321001234
+
